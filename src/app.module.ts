@@ -1,9 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { PeopleModule } from './people/people.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [PeopleModule],
+  imports: [
+    TypeOrmModule.forRoot(),
+    PeopleModule,
+  ],
   controllers: [AppController],
   components: [],
 })
